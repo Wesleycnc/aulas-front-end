@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout</title>
+<style>
+
+/* Regras de uso geral 
+O que codificamos aqui, é tudo que será usado no
+ site não importando o muito o tamanho da tela.
+ Neste momento não usamos media queries.*/
+ 
+*, *::before, *::after { box-sizing: border-box; }
+    /* IMPORTANTE PARA O USO DA MEDIDA REM */
+    html{
+        font-size: 15px;
+    }
+
+body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    }
+    
+#container{
+    box-shadow: black 0 0 5px;
+    padding: 5px;
+}
+
+header{
+    background-color: aqua;
+    text-align: center;
+    height: 100px;
+}
+/* CSS Reset: remoção de valores padrão */
+body,h1,h2,p{
+    margin: 0;
+    padding: 0;
+}
+
+h1 {font-size: 2rem;}
+
+h2 {font-size: 1.2rem;}
+
+p {font-size: 1.1rem;}
+
+nav{background-color: rgb(255, 121, 121);}
+
+#coluna-um{background-color: cadetblue;}
+
+#coluna-dois{background-color: coral;}
+
+#coluna-tres{background-color: darkgrey;}
+
+article{padding: 5px;}
+
+footer{background-color: darkorange;}
+
+@media screen and (min-width: 700px) {
+    html{font-size: 18px}
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+    main{/* flex container */
+        display: flex;
+        flex-wrap: wrap; /* permite quebra no fluxo */
+
+    }
+
+    #coluna-um,#coluna-dois{width: 50%;}
+    
+    
+}
+
+@media screen and (min-width: 822px) {
+    html {font-size: 20px }
+
+
+    #coluna-um, #coluna-dois, #coluna-tres  {width: 33.33%;}
+    main{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    body {max-width: 1200px;}
+
+    body{text-align: center;
+    margin: auto;}
+    
+    }
+
+/* Exercicio: crie uma nova media query para telas a partir de 822px, que faça as seguintes alterações:
+
+-tamanho geral de fonte: 20px
+-Largura das colunas: 33.33%*
+-limite o tamanho da container para até 1200 e também 
+e centralize*/
+
+</style>
+</head>
+<body>
+    <div class="container">
+
+    <!--CABEÇALHO  -->
+    <header>
+        <h1>Site XYZ</h1>
+        <nav>
+            <a href="">LINK 1</a>
+            <a href="">LINK 2</a>
+            <a href="">LINK 3</a>
+        </nav>
+    </header>
+
+    <main>
+        <article id="coluna-um">
+        
+            <h2>UM</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, asperiores provident ducimus similique numquam dicta aliquam? Saepe dolorem fuga ratione odio suscipit consequatur harum, nam voluptatem? Velit delectus consectetur iusto placeat ullam qui voluptatum harum autem dolore provident nemo ut facere corrupti aliquid est commodi veniam quo consequuntur, quasi expedita.</p>
+        </article>
+
+        <article id="coluna-dois">
+           
+            <h2>DOIS</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, tempora mollitia, aperiam voluptas praesentium ullam ipsam distinctio et cum officia porro ab? Tenetur ut repellat, et illo impedit possimus voluptates necessitatibus inventore quod esse mollitia fuga aliquam eos id! Alias itaque culpa dolorum laborum voluptatum doloremque ut assumenda quos necessitatibus.</p>
+        </article>
+
+        <article id="coluna-tres">
+            <h2>TRÊS</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat placeat earum numquam distinctio repudiandae nihil quo similique tenetur corrupti quae quam laborum optio veniam, sit explicabo laboriosam accusantium in aliquid velit fugiat. Voluptatibus inventore ipsam minima illum, nihil deserunt nemo facilis tenetur iusto ipsum quidem officiis consequatur quis rerum. Ab.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>Layout de Exemplo</p>
+    </footer>
+    </div>
+    <!-- Vamos criar um layout responsivo do zero -->
+    
+</body>
+</html>
